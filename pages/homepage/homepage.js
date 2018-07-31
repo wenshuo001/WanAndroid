@@ -1,15 +1,10 @@
 // pages/homepage/homepage.js
 Page({
-
+  
   /**
    * 页面的初始数据
    */
   data: {
-    imgUrls: [
-      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
-    ],
     indicatorDots: false,
     autoplay: true,
     interval: 5000,
@@ -20,6 +15,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this;
+     
+
     wx.request({
       url: 'http://www.wanandroid.com/banner/json', //仅为示例，并非真实的接口地址
       
@@ -27,12 +25,12 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success: function (res) {
-        
-        that.setData({
-          bannerImg: res.data.result.ad,
-
-          goodsList: res.data.result.goods
-        })
+         that.setData({
+          bannerdata: res.data.data,
+         })
+        // for (var i = 0; i < res.data.length; i++) {
+        //   this.data.imgUrls[i] = res.data.data[i].imagePath;
+        // }
        
       }
     })
