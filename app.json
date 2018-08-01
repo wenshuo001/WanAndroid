@@ -1,14 +1,15 @@
 {
-  "pages":[
+  "pages": [
     "pages/homepage/homepage",
     "pages/knowledge/knowledge",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "images"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#000000",
     "navigationBarTitleText": "WanAndroid",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle": "white"
   }
 }

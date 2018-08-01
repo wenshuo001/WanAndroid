@@ -28,10 +28,21 @@ Page({
          that.setData({
           bannerdata: res.data.data,
          })
-        // for (var i = 0; i < res.data.length; i++) {
-        //   this.data.imgUrls[i] = res.data.data[i].imagePath;
-        // }
        
+      }
+    }),
+
+    wx.request({
+      url: 'http://www.wanandroid.com/article/list/0/json', //仅为示例，并非真实的接口地址
+
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        that.setData({
+          listdata: res.data.data.datas,
+        })
+
       }
     })
   },
@@ -68,7 +79,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+    wx.stopPullDownRefresh()
   },
 
   /**
