@@ -6,7 +6,7 @@
         <image src="{{item.imagePath}}" class="slide-image" width="355" height="150"/>
         <text class='banner_text'>{{item.title}}</text>
        </swiper-item>
-       </block>
+       </block> 
     </swiper>
 
     <view class='page-list'>
